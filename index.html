@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samuel Wainaina: engineering evidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F6F7F9; --surface:#FFFFFF; --fg:#172033; --muted:#55607A; --accent:#1D4F91; --line:#D9DEE7;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1522; --surface:#161E30; --fg:#E6EAF2; --muted:#9AA6BD; --accent:#7FB0F0; --line:#263048;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1522; --surface:#161E30; --fg:#E6EAF2; --muted:#9AA6BD; --accent:#7FB0F0; --line:#263048;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:1.0625rem; line-height:1.65;
+}
+main{max-width:46rem; margin:0 auto; padding:3rem 1.25rem 4rem}
+h1,h2,h3{font-family:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.2; margin:0}
+h1{font-size:clamp(2rem,6vw,2.9rem); font-weight:700; letter-spacing:-0.02em}
+h2{font-size:1.55rem; font-weight:700; margin-top:3.5rem; letter-spacing:-0.01em}
+h3{font-size:1.1rem; font-weight:600; margin-top:2rem}
+p{margin:.9rem 0}
+.lede{font-size:1.2rem; color:var(--muted); max-width:38rem; margin-top:1.1rem}
+.facts{margin:1.2rem 0 0; padding:0; list-style:none; border-top:1px solid var(--line)}
+.facts li{padding:.7rem 0; border-bottom:1px solid var(--line)}
+.facts b{font-family:"Instrument Sans",system-ui,sans-serif; font-weight:600}
+.diagram{background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:1rem; margin:1.5rem 0; overflow-x:auto; max-width:100%}
+.diagram svg{display:block; width:100%; height:auto; min-width:34rem}
+.diagram .b{fill:var(--bg); stroke:var(--line); stroke-width:1.5}
+.diagram .t{fill:var(--fg); font:600 14px "Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.diagram .s{fill:var(--muted); font:400 12px "Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.diagram .a{stroke:var(--accent); stroke-width:2; fill:none}
+.diagram .h{fill:var(--accent)}
+.note{color:var(--muted); font-size:.95rem}
+a{color:var(--accent); text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+footer{margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main>
+<h1>Samuel Wainaina</h1>
+<p class="lede">Full-stack developer in Nairobi (UTC+3). This page shows two systems I built, how they are put together, and the controls around them. Everything here comes from my CV; nothing is a mockup.</p>
+<p class="note">Open to contract and full-time roles, remote or in Nairobi.</p>
+
+<h2>A five-component retail system</h2>
+<p>A client system for a Nairobi retail business, built between January and July 2026. I was the only developer, so the architecture, backend, security controls and all five applications are my work. The client’s branding has been removed from everything on this page.</p>
+
+<div class="diagram"><svg viewBox="0 0 640 260" role="img" aria-label="Four client applications connect to one Supabase PostgreSQL backend"><defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="h" d="M0 0L10 5L0 10z"/></marker></defs><rect class="b" x="10" y="12" width="250" height="50" rx="6"/><text class="t" x="135.0" y="34.0" text-anchor="middle">Staff mobile app</text><text class="s" x="135.0" y="52.0" text-anchor="middle">React Native (Expo)</text><path class="a" d="M260 37 C320 37 320 130 378 130" marker-end="url(#ah1)"/><rect class="b" x="10" y="74" width="250" height="50" rx="6"/><text class="t" x="135.0" y="96.0" text-anchor="middle">Second mobile app</text><text class="s" x="135.0" y="114.0" text-anchor="middle">React Native (Expo)</text><path class="a" d="M260 99 C320 99 320 130 378 130" marker-end="url(#ah1)"/><rect class="b" x="10" y="136" width="250" height="50" rx="6"/><text class="t" x="135.0" y="158.0" text-anchor="middle">Desktop point of sale</text><text class="s" x="135.0" y="176.0" text-anchor="middle">Electron + React</text><path class="a" d="M260 161 C320 161 320 130 378 130" marker-end="url(#ah1)"/><rect class="b" x="10" y="198" width="250" height="50" rx="6"/><text class="t" x="135.0" y="220.0" text-anchor="middle">Analytics dashboard</text><text class="s" x="135.0" y="238.0" text-anchor="middle">React</text><path class="a" d="M260 223 C320 223 320 130 378 130" marker-end="url(#ah1)"/><rect class="b" x="380" y="70" width="250" height="120" rx="6"/><text class="t" x="505.0" y="127.0" text-anchor="middle">Supabase PostgreSQL</text><text class="s" x="505.0" y="145.0" text-anchor="middle">30+ functions behind row-level security</text></svg></div>
+
+<ul class="facts">
+  <li><b>Two mobile apps</b> in React Native (Expo) with offline-first storage and sync.</li>
+  <li><b>Desktop point of sale</b> in Electron and React.</li>
+  <li><b>Analytics dashboard</b> in React with role-based access.</li>
+  <li><b>Shared backend</b> on Supabase and PostgreSQL.</li>
+</ul>
+
+<h3>Decisions worth looking at</h3>
+<ul class="facts">
+  <li><b>Logic lives in the database.</b> The backend is built on more than 30 database functions behind row-level security.</li>
+  <li><b>Schema changes are additive and numbered.</b> Migrations are written in sequence and add to the schema.</li>
+  <li><b>Batch submission is idempotent.</b> The staff app can resubmit a batch without creating duplicates, which matters for an app that works offline.</li>
+  <li><b>Production migrations pass a gate.</b> I wrote a security and performance gate that every production migration had to clear.</li>
+  <li><b>Development left a record.</b> About 305 tasks were recorded through an AI-assisted dispatch workflow between 30 May and 11 July 2026.</li>
+</ul>
+<h3>Why it is built this way</h3>
+<ul class="facts">
+  <li><b>Logic in the database.</b> The rules live in one place, so there is a single source of truth. The apps mostly read and write, which means they run on any device however modest its processor and memory.</li>
+  <li><b>Offline-first.</b> Internet and electricity are unreliable here, and a digitised system shouldn’t be at their mercy. Work continues without interruption and syncs when it can.</li>
+  <li><b>A gate before production.</b> Development ran through an AI-assisted workflow, so the gate is an independent check on generated changes. It replaces guesswork with a pass or fail.</li>
+</ul>
+
+<h3>Problems I had to solve</h3>
+<ul class="facts">
+  <li><b>Caching on slow, unreliable connections.</b> The apps had to stay usable when the network was poor or absent.</li>
+  <li><b>Double submissions.</b> Idempotency keys stop a retried submission from being recorded twice.</li>
+  <li><b>What to download, and when.</b> I separated the data that is mandatory on install and login from the volatile data that can be discarded later.</li>
+</ul>
+<p class="note">What this shows: sole architectural ownership of a multi-application system. It does not show experience managing an engineering team.</p>
+
+<h2>local-ops: governing AI coding agents</h2>
+<p>A framework I started in September 2026 that lets AI coding agents work under review gates, staged releases and recorded approvals. Agents claim work from a queue, report results, then wait for a person to review them.</p>
+
+<div class="diagram"><svg viewBox="0 0 900 104" role="img" aria-label="A task moves from the queue to an agent, human review, staging rehearsal and a production change"><defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="h" d="M0 0L10 5L0 10z"/></marker></defs><rect class="b" x="10" y="20" width="150" height="64" rx="6"/><text class="t" x="85.0" y="49.0" text-anchor="middle">Task queue</text><text class="s" x="85.0" y="67.0" text-anchor="middle">PostgreSQL</text><path class="a" d="M160 52 L188 52" marker-end="url(#ah2)"/><rect class="b" x="190" y="20" width="150" height="64" rx="6"/><text class="t" x="265.0" y="49.0" text-anchor="middle">AI coding agent</text><text class="s" x="265.0" y="67.0" text-anchor="middle">claims via MCP server</text><path class="a" d="M340 52 L368 52" marker-end="url(#ah2)"/><rect class="b" x="370" y="20" width="150" height="64" rx="6"/><text class="t" x="445.0" y="49.0" text-anchor="middle">Human review</text><text class="s" x="445.0" y="67.0" text-anchor="middle">agent reports result</text><path class="a" d="M520 52 L548 52" marker-end="url(#ah2)"/><rect class="b" x="550" y="20" width="150" height="64" rx="6"/><text class="t" x="625.0" y="49.0" text-anchor="middle">Staging rehearsal</text><text class="s" x="625.0" y="67.0" text-anchor="middle">after approval</text><path class="a" d="M700 52 L728 52" marker-end="url(#ah2)"/><rect class="b" x="730" y="20" width="150" height="64" rx="6"/><text class="t" x="805.0" y="49.0" text-anchor="middle">Production change</text><text class="s" x="805.0" y="67.0" text-anchor="middle">recorded approval</text></svg></div>
+
+<ul class="facts">
+  <li><b>Stack:</b> a local PostgreSQL store and a TypeScript MCP server.</li>
+  <li><b>Every write goes through database functions.</b> Nothing writes to tables directly.</li>
+  <li><b>Production changes need a recorded approval.</b></li>
+  <li><b>Track record so far:</b> 12 releases and 39 migrations, each rehearsed on staging.</li>
+  <li><b>Tests:</b> separate suites for SQL, the MCP server and the scripts.</li>
+  <li><b>Source:</b> <a href="https://github.com/tenonwork/local-ops-public">github.com/tenonwork/local-ops-public</a> (MIT). It is a sanitised public edition of the private deployment: history is a single curated commit and three migrations differ from the private ledger.</li>
+</ul>
+
+<h3>Why it is built this way</h3>
+<ul class="facts">
+  <li><b>Controls are enforced in the database, not by instruction.</b> An early failure showed why: a production-change task was claimed before its approval existed, and only a later step caught it. The fix lives in the database. Unapproved tasks are hidden from the agent and refused if claimed, without being used up.</li>
+  <li><b>An agent cannot approve its own work.</b> Only the planning role can record a production approval. Otherwise the executing agent could approve itself and the gate would mean nothing.</li>
+  <li><b>Approval is bound to the exact file reviewed.</b> It names the migration’s version and checksum, and promotion refuses if either has changed. A later failing record revokes an approval.</li>
+  <li><b>Evidence is fresh at apply time.</b> Each promotion rebuilds the staging copy from a new production dump, which doubles as the pre-apply backup, and reruns the full test suite just before applying. An old passing run can’t be replayed.</li>
+  <li><b>Unused write paths are closed.</b> Direct write permissions on every table are revoked from the planning role. All its tools already use database functions, so a partial revoke would have left open paths nobody was using.</li>
+  <li><b>One home for each rule.</b> Rules live in versioned tables and the other documents point to them. Copies had drifted apart, so I removed them.</li>
+</ul>
+
+<footer>
+<p>Contact: <a href="mailto:swainaina551@gmail.com">swainaina551@gmail.com</a> · <a href="https://www.linkedin.com/in/samuelwainaina-285763210">LinkedIn</a> · <a href="https://github.com/tenonwork/local-ops-public">GitHub</a></p>
+<p class="note">I’m happy to walk through either system in a technical conversation or take a practical assessment.</p>
+</footer>
+</main>
+</body>
+</html>
